@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var passport = require('passport')
 var session = require('express-session');
-var JsonStore = require('express-session-json')(session);
+//var JsonStore = require('express-session-json')(session);
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -37,7 +37,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: false,
-  store: new JsonStore()
+  //store: new JsonStore()
 }));
 app.use(passport.authenticate('session'));
 
